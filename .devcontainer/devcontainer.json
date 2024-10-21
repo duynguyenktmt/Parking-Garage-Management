@@ -1,0 +1,23 @@
+{
+    "name": "My Custom Template",
+    "build": {
+      "dockerfile": "Dockerfile" // Remove this line if not using a Dockerfile
+    },
+    "customizations": {
+        "vscode": {
+        "settings": {
+            "java.home": "/usr/local/openjdk-11",
+            "editor.formatOnSave": true,
+            "editor.tabSize": 4
+        },
+        "extensions": [
+            "redhat.java",  // Java language support
+            "vscjava.vscode-java-pack"  // Java Extension Pack
+        ]
+        }
+    },
+    "postCreateCommand": "javac -version && java -version", // Command to run after creating the container
+    //"forwardPorts": [8080], // Ports to forward
+    "remoteUser": "vscode"
+  }
+  
