@@ -6,7 +6,7 @@
     "customizations": {
         "vscode": {
         "settings": {
-            "java.home": "/usr/local/openjdk-11",
+            "java.jdt.ls.java.home": "/usr/local/openjdk-21",
             "editor.formatOnSave": true,
             "editor.tabSize": 4
         },
@@ -19,5 +19,5 @@
     "postCreateCommand": "javac -version && java -version", // Command to run after creating the container
     //"forwardPorts": [8080], // Ports to forward
     "remoteUser": "vscode"
-  }
+}
   
