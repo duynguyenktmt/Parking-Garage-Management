@@ -18,12 +18,13 @@
     },
     "postCreateCommand": [
         "javac -version && java -version", // Command to run after creating the container
+        "npm -v", // Check npm version
         "curl -fsSL https://deb.nodesource.com/setup_18.x | bash -", // Setup Node.js repository
         "apt-get install -y nodejs", // Install Node.js (npm is included)
         "npm install -g npm@latest", // Update npm to the latest version
         "npm install -g npx" // Install npx globally
     ],
-    //"forwardPorts": [8080], // Ports to forward
+    "forwardPorts": [8080, 3000], // Ports to forward
     "remoteUser": "vscode"
 }
   
