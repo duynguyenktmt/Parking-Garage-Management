@@ -46,3 +46,8 @@ Infrastructure
 Docker: For containerization.
 Kubernetes: For orchestration.
 Monitoring Tools: Prometheus and Grafana for monitoring service health and performance metrics.
+
+Representation of the Diagram:
+
+![image](https://github.com/user-attachments/assets/8731da1c-ad7e-42df-81d2-416f6b7b0b77)
+
