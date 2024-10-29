@@ -1,0 +1,31 @@
+{
+  "name": "Spring Boot Microservice",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+  "features": {
+      "ghcr.io/devcontainers/features/java:1": {
+          "version": "none",
+          "installMaven": "true",
+          "installGradle": "false"
+      },
+      "ghcr.io/devcontainers/features/docker-in-docker:1": {
+          "version": "latest"
+      }
+  },
+
+  "forwardPorts": [8085],
+
+  "postCreateCommand": "mvn clean install",
+
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "vscjava.vscode-java-pack",
+              "redhat.java",
+              "pivotal.vscode-spring-boot"
+          ]
+      }
+  },
+
+  "remoteUser ": "vscode"
+}
