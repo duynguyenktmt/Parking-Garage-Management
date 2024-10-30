@@ -1,0 +1,19 @@
+{
+    "name": "NestJS Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-docker",
+        "nrwl.angular-console"
+    ],
+    "postCreateCommand": "npm run build",
+    "forwardPorts": [3560],
+    "remoteUser ": "node"
+}
