@@ -1,0 +1,43 @@
+To set a custom port for the H2 database, you can configure both the web server and the TCP server ports. Here’s how to do it:
+
+1. Setting the Web Console Port
+The H2 Console uses a web server that listens on a specific port. By default, this is set to 8082. To change it, you need to modify the configuration file or start the server with a specific parameter.
+
+Configuration File Method
+Locate the .h2.server.properties file in your user home directory. This file is created automatically when you first start the H2 Console.
+
+Open the file and add or modify the following line
+
+webPort=YOUR_CUSTOM_PORT
+Replace YOUR_CUSTOM_PORT with the desired port number.
+
+Command Line Method
+You can also specify the port directly when starting the H2 server from the command line:
+java -cp h2*.jar org.h2.tools.Server -web -webPort YOUR_CUSTOM_PORT
+
+2. Setting the TCP Server Port
+The TCP server allows remote connections to the H2 database. By default, it listens on port 9092. To change this, you can use the -tcpPort option.
+
+Command Line Method
+To start the TCP server on a custom port, use the following command:
+java -cp h2*.jar org.h2.tools.Server -tcp -tcpPort YOUR_CUSTOM_PORT
+
+3. Example Command to Start Both Servers
+If you want to start both the web server and the TCP server with custom ports, you can combine the commands like this:
+java -cp h2*.jar org.h2.tools.Server -web -webPort 8085 -tcp -tcpPort 9095
+
+In this example:
+
+The web console will run on port 8085.
+The TCP server will run on port 9095.
+
+4. Verifying the Configuration
+After starting the server with the custom ports:
+
+Access the H2 Console by navigating to http://localhost:YOUR_CUSTOM_WEB_PORT in your web browser.
+Ensure that your application or client connects to the H2 database using the new TCP port.
+5. Important Notes
+Firewall Settings: Ensure that your firewall allows traffic on the custom ports you have set.
+Port Availability: Make sure the ports you choose are not already in use by other applications to avoid conflicts.
+Persistence: If you want these settings to persist across server restarts, consider adding them to the configuration file as mentioned above.
+By following these steps, you can successfully set a custom port for the H2 database.
